@@ -30,16 +30,65 @@ namespace InvoicePDFGenerator.Controllers
 
             if (inv != null)
             {
-                //string tag = arrHEX[1];
-                //string length = "";
-                //if (inv.Name.Length <= 15)
-                //    length = arrHEX[inv.Name.Length];
-                //else
-                //    length = BitConverter.ToString(Encoding.Default.GetBytes(inv.Name.Length.ToString())).Replace("-", "");
+                var inv1 = inv.FirstOrDefault();
 
-                //string value = BitConverter.ToString(Encoding.Default.GetBytes(inv.Name)).Replace("-", "");
+                if (!string.IsNullOrEmpty(inv1.TIN))
+                {
+                    string tag = arrHEX[1];
+                    string length = "";
+                    if (inv1.Name.Length <= 15)
+                        length = arrHEX[inv1.Name.Length];
+                    else
+                        length = BitConverter.ToString(Encoding.Default.GetBytes(inv1.Name.Length.ToString())).Replace("-", "");
+                    string value = BitConverter.ToString(Encoding.Default.GetBytes(inv1.Name)).Replace("-", "");
+                    string tlvHex = tag + length + value;
 
-                //string tlvHex = tag + length + value;
+                    tag = arrHEX[2];
+                    if (inv1.TIN.Length <= 15)
+                        length = arrHEX[inv1.TIN.Length];
+                    else
+                        length = BitConverter.ToString(Encoding.Default.GetBytes(inv1.TIN.Length.ToString())).Replace("-", "");
+
+                    value = BitConverter.ToString(Encoding.Default.GetBytes(inv1.TIN)).Replace("-", "");
+                    tlvHex += tag + length + value;
+
+                    tag = arrHEX[3];
+                    inv1.InvoiceDate = new DateTime(inv1.InvoiceDate.Value.Year, inv1.InvoiceDate.Value.Month, inv1.InvoiceDate.Value.Day, 14, 0, 0);
+                    string timeStamp = inv1.InvoiceDate.GetValueOrDefault().ToString("yyyy-MM-ddTHH:mm:ss");
+                    if (timeStamp.Length <= 15)
+                        length = arrHEX[timeStamp.Length];
+                    else
+                        length = BitConverter.ToString(Encoding.Default.GetBytes(timeStamp.Length.ToString())).Replace("-", "");
+                    value = BitConverter.ToString(Encoding.Default.GetBytes(timeStamp)).Replace("-", "");
+                    tlvHex += tag + length + value;
+
+                    tag = arrHEX[4];
+                    if (inv1.InvoiceAmt.ToString().Length <= 15)
+                        length = arrHEX[inv1.InvoiceAmt.ToString().Length];
+                    else
+                        length = BitConverter.ToString(Encoding.Default.GetBytes(inv1.InvoiceAmt.ToString().Length.ToString())).Replace("-", "");
+                    value = BitConverter.ToString(Encoding.Default.GetBytes(inv1.InvoiceAmt.ToString())).Replace("-", "");
+                    tlvHex += tag + length + value;
+
+                    tag = arrHEX[5];
+                    double taxRate = 0;
+                    var invdet = m_db.AR_DETAILS.Where(x => x.InvoiceNum == invoice.InvoiceNumber);
+                    if(invdet != null && invdet.Count() > 0)
+                        taxRate = invdet.FirstOrDefault().TaxRate.GetValueOrDefault();
+
+                    taxRate = taxRate / 100;
+                    string vatValue = Convert.ToString(Convert.ToDouble(inv1.InvoiceAmt.GetValueOrDefault()) * taxRate);
+                    if (vatValue.Length <= 15)
+                        length = arrHEX[vatValue.ToString().Length];
+                    else
+                        length = BitConverter.ToString(Encoding.Default.GetBytes(vatValue.Length.ToString())).Replace("-", "");
+                    value = BitConverter.ToString(Encoding.Default.GetBytes(vatValue)).Replace("-", "");
+
+                    tlvHex += tag + length + value;
+
+                    var plainTextBytes = System.Text.Encoding.UTF8.GetBytes(tlvHex);
+                    var final = System.Convert.ToBase64String(plainTextBytes);
+                }
 
                 LocalReport report = new LocalReport();
                 report.DataSources.Clear();
