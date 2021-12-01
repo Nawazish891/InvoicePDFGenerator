@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <Height>5.75in</Height>
+    <Style />
+  </Body>
+  <Width>14.575in</Width>
+  <Page>
+    <PageHeight>29.7cm</PageHeight>
+    <PageWidth>21cm</PageWidth>
+    <LeftMargin>2cm</LeftMargin>
+    <RightMargin>2cm</RightMargin>
+    <TopMargin>2cm</TopMargin>
+    <BottomMargin>2cm</BottomMargin>
+    <ColumnSpacing>0.13cm</ColumnSpacing>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="Inv_TestingDataSet">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>09b66d5a-71ea-443f-908d-edbe9aacda9f</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Query>
+        <DataSourceName>Inv_TestingDataSet</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="InvoiceNum">
+          <DataField>InvoiceNum</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="InvoiceNumAr">
+          <DataField>InvoiceNumAr</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Company">
+          <DataField>Company</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="OrderNum">
+          <DataField>OrderNum</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="OrderNumAr">
+          <DataField>OrderNumAr</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PONum">
+          <DataField>PONum</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PONumAr">
+          <DataField>PONumAr</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FOB">
+          <DataField>FOB</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TermsCode">
+          <DataField>TermsCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="InvoiceDate">
+          <DataField>InvoiceDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="InvoiceAmt">
+          <DataField>InvoiceAmt</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="InvoiceAmtAr">
+          <DataField>InvoiceAmtAr</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CurrencyCode">
+          <DataField>CurrencyCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Character01">
+          <DataField>Character01</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Character02">
+          <DataField>Character02</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Number01">
+          <DataField>Number01</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="Number02">
+          <DataField>Number02</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="Date01">
+          <DataField>Date01</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Date02">
+          <DataField>Date02</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CheckBox01">
+          <DataField>CheckBox01</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CheckBox02">
+          <DataField>CheckBox02</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ShortChar01">
+          <DataField>ShortChar01</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ShortChar02">
+          <DataField>ShortChar02</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CustID">
+          <DataField>CustID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CustIDAr">
+          <DataField>CustIDAr</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Address1">
+          <DataField>Address1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Address2">
+          <DataField>Address2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="City">
+          <DataField>City</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="State">
+          <DataField>State</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Zip">
+          <DataField>Zip</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Country">
+          <DataField>Country</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TIN">
+          <DataField>TIN</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TINAr">
+          <DataField>TINAr</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NameinArabic">
+          <DataField>NameinArabic</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BilltoInArabic">
+          <DataField>BilltoInArabic</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ShiptoinArabic">
+          <DataField>ShiptoinArabic</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TotalWords">
+          <DataField>TotalWords</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TotalWordsAr">
+          <DataField>TotalWordsAr</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CurrencyCodeAr">
+          <DataField>CurrencyCodeAr</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Id">
+          <DataField>Id</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>Inv_TestingDataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\HP\source\repos\InvoicePDFGenerator\InvoicePDFGenerator\Inv_TestingDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>AR_HEADER</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>AR_HEADERTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="DataSet2">
+      <Query>
+        <DataSourceName>Inv_TestingDataSet</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="InvoiceNum">
+          <DataField>InvoiceNum</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="InvoiceLine">
+          <DataField>InvoiceLine</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Company">
+          <DataField>Company</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PartNum">
+          <DataField>PartNum</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LineDesc">
+          <DataField>LineDesc</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LineDescAr">
+          <DataField>LineDescAr</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TotalMiscChrg">
+          <DataField>TotalMiscChrg</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="PackNum">
+          <DataField>PackNum</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="PackNumAr">
+          <DataField>PackNumAr</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PackLine">
+          <DataField>PackLine</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="OrderNum">
+          <DataField>OrderNum</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="OrderLine">
+          <DataField>OrderLine</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="CustID">
+          <DataField>CustID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Address1">
+          <DataField>Address1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Address2">
+          <DataField>Address2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Address3">
+          <DataField>Address3</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ShipViaCode">
+          <DataField>ShipViaCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="UnitPrice">
+          <DataField>UnitPrice</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="UnitPriceAr">
+          <DataField>UnitPriceAr</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SalesUM">
+          <DataField>SalesUM</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SellingShipQty">
+          <DataField>SellingShipQty</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="SellingShipQtyAr">
+          <DataField>SellingShipQtyAr</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Total">
+          <DataField>Total</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="TotalAr">
+          <DataField>TotalAr</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TaxRate">
+          <DataField>TaxRate</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="ProdNameAr">
+          <DataField>ProdNameAr</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Id">
+          <DataField>Id</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>Inv_TestingDataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\HP\source\repos\InvoicePDFGenerator\InvoicePDFGenerator\Inv_TestingDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>AR_DETAILS</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>AR_DETAILSTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
+  <EmbeddedImages>
+    <EmbeddedImage Name="toprightlogo">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>bff0535a-c7a8-4601-9d66-ce45b2d2aeec</rd:ReportID>
+</Report>
