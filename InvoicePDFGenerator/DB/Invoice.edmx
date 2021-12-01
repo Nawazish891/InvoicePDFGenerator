@@ -1,0 +1,610 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Inv_TestingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AR_DETAILS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="InvoiceNum" Type="int" />
+          <Property Name="InvoiceLine" Type="int" />
+          <Property Name="Company" Type="nvarchar" MaxLength="255" />
+          <Property Name="PartNum" Type="nvarchar" MaxLength="255" />
+          <Property Name="LineDesc" Type="nvarchar(max)" />
+          <Property Name="LineDescAr" Type="nvarchar(max)" />
+          <Property Name="TotalMiscChrg" Type="float" />
+          <Property Name="PackNum" Type="float" />
+          <Property Name="PackNumAr" Type="nvarchar" MaxLength="50" />
+          <Property Name="PackLine" Type="float" />
+          <Property Name="OrderNum" Type="float" />
+          <Property Name="OrderLine" Type="float" />
+          <Property Name="CustID" Type="nvarchar" MaxLength="255" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="Address1" Type="nvarchar" MaxLength="255" />
+          <Property Name="Address2" Type="nvarchar" MaxLength="225" />
+          <Property Name="Address3" Type="nvarchar" MaxLength="225" />
+          <Property Name="ShipViaCode" Type="nvarchar" MaxLength="255" />
+          <Property Name="UnitPrice" Type="money" />
+          <Property Name="UnitPriceAr" Type="nvarchar" MaxLength="50" />
+          <Property Name="SalesUM" Type="nvarchar" MaxLength="255" />
+          <Property Name="SellingShipQty" Type="float" />
+          <Property Name="SellingShipQtyAr" Type="nvarchar" MaxLength="50" />
+          <Property Name="Total" Type="money" />
+          <Property Name="TotalAr" Type="nvarchar" MaxLength="50" />
+          <Property Name="TaxRate" Type="float" />
+          <Property Name="ProdNameAr" Type="nvarchar(max)" />
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AR_DETAILS_befor_deleted">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="InvoiceNum" Type="int" />
+          <Property Name="InvoiceLine" Type="int" />
+          <Property Name="Company" Type="nvarchar" MaxLength="255" />
+          <Property Name="PartNum" Type="nvarchar" MaxLength="255" />
+          <Property Name="LineDesc" Type="nvarchar(max)" />
+          <Property Name="LineDescAr" Type="nvarchar(max)" />
+          <Property Name="TotalMiscChrg" Type="float" />
+          <Property Name="PackNum" Type="float" />
+          <Property Name="PackNumAr" Type="nvarchar" MaxLength="50" />
+          <Property Name="PackLine" Type="float" />
+          <Property Name="OrderNum" Type="float" />
+          <Property Name="OrderLine" Type="float" />
+          <Property Name="CustID" Type="nvarchar" MaxLength="255" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="Address1" Type="nvarchar" MaxLength="255" />
+          <Property Name="Address2" Type="nvarchar" MaxLength="225" />
+          <Property Name="Address3" Type="nvarchar" MaxLength="225" />
+          <Property Name="ShipViaCode" Type="nvarchar" MaxLength="255" />
+          <Property Name="UnitPrice" Type="money" />
+          <Property Name="UnitPriceAr" Type="nvarchar" MaxLength="50" />
+          <Property Name="SalesUM" Type="nvarchar" MaxLength="255" />
+          <Property Name="SellingShipQty" Type="float" />
+          <Property Name="SellingShipQtyAr" Type="nvarchar" MaxLength="50" />
+          <Property Name="Total" Type="money" />
+          <Property Name="TotalAr" Type="nvarchar" MaxLength="50" />
+          <Property Name="TaxRate" Type="float" />
+          <Property Name="ProdNameAr" Type="nvarchar(max)" />
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AR_HEADER">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="InvoiceNum" Type="int" />
+          <Property Name="InvoiceNumAr" Type="nvarchar" MaxLength="50" />
+          <Property Name="Company" Type="nvarchar" MaxLength="255" />
+          <Property Name="OrderNum" Type="int" />
+          <Property Name="OrderNumAr" Type="nvarchar" MaxLength="50" />
+          <Property Name="PONum" Type="nvarchar" MaxLength="255" />
+          <Property Name="PONumAr" Type="nvarchar" MaxLength="255" />
+          <Property Name="FOB" Type="nvarchar" MaxLength="255" />
+          <Property Name="TermsCode" Type="nvarchar" MaxLength="255" />
+          <Property Name="InvoiceDate" Type="datetime" />
+          <Property Name="InvoiceAmt" Type="money" />
+          <Property Name="InvoiceAmtAr" Type="nvarchar" MaxLength="50" />
+          <Property Name="CurrencyCode" Type="nvarchar" MaxLength="255" />
+          <Property Name="Character01" Type="nvarchar" MaxLength="255" />
+          <Property Name="Character02" Type="nvarchar" MaxLength="255" />
+          <Property Name="Number01" Type="float" />
+          <Property Name="Number02" Type="float" />
+          <Property Name="Date01" Type="nvarchar" MaxLength="255" />
+          <Property Name="Date02" Type="nvarchar" MaxLength="255" />
+          <Property Name="CheckBox01" Type="nvarchar" MaxLength="255" />
+          <Property Name="CheckBox02" Type="nvarchar" MaxLength="255" />
+          <Property Name="ShortChar01" Type="nvarchar" MaxLength="255" />
+          <Property Name="ShortChar02" Type="nvarchar" MaxLength="255" />
+          <Property Name="CustID" Type="nvarchar" MaxLength="50" />
+          <Property Name="CustIDAr" Type="nvarchar" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="Address1" Type="nvarchar" MaxLength="255" />
+          <Property Name="Address2" Type="nvarchar" MaxLength="255" />
+          <Property Name="City" Type="nvarchar" MaxLength="255" />
+          <Property Name="State" Type="nvarchar" MaxLength="255" />
+          <Property Name="Zip" Type="nvarchar" MaxLength="255" />
+          <Property Name="Country" Type="nvarchar" MaxLength="255" />
+          <Property Name="TIN" Type="nvarchar" MaxLength="50" />
+          <Property Name="TINAr" Type="nvarchar" MaxLength="50" />
+          <Property Name="NameinArabic" Type="nvarchar" MaxLength="255" />
+          <Property Name="BilltoInArabic" Type="nvarchar" MaxLength="255" />
+          <Property Name="ShiptoinArabic" Type="nvarchar" MaxLength="255" />
+          <Property Name="TotalWords" Type="nvarchar" MaxLength="255" />
+          <Property Name="TotalWordsAr" Type="nvarchar" MaxLength="255" />
+          <Property Name="CurrencyCodeAr" Type="nvarchar" MaxLength="255" />
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AR_HEADER_befor_deleted">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="InvoiceNum" Type="int" />
+          <Property Name="InvoiceNumAr" Type="nvarchar" MaxLength="50" />
+          <Property Name="Company" Type="nvarchar" MaxLength="255" />
+          <Property Name="OrderNum" Type="int" />
+          <Property Name="OrderNumAr" Type="nvarchar" MaxLength="50" />
+          <Property Name="PONum" Type="nvarchar" MaxLength="255" />
+          <Property Name="PONumAr" Type="nvarchar" MaxLength="255" />
+          <Property Name="FOB" Type="nvarchar" MaxLength="255" />
+          <Property Name="TermsCode" Type="nvarchar" MaxLength="255" />
+          <Property Name="InvoiceDate" Type="datetime" />
+          <Property Name="InvoiceAmt" Type="money" />
+          <Property Name="InvoiceAmtAr" Type="nvarchar" MaxLength="50" />
+          <Property Name="CurrencyCode" Type="nvarchar" MaxLength="255" />
+          <Property Name="Character01" Type="nvarchar" MaxLength="255" />
+          <Property Name="Character02" Type="nvarchar" MaxLength="255" />
+          <Property Name="Number01" Type="float" />
+          <Property Name="Number02" Type="float" />
+          <Property Name="Date01" Type="nvarchar" MaxLength="255" />
+          <Property Name="Date02" Type="nvarchar" MaxLength="255" />
+          <Property Name="CheckBox01" Type="nvarchar" MaxLength="255" />
+          <Property Name="CheckBox02" Type="nvarchar" MaxLength="255" />
+          <Property Name="ShortChar01" Type="nvarchar" MaxLength="255" />
+          <Property Name="ShortChar02" Type="nvarchar" MaxLength="255" />
+          <Property Name="CustID" Type="nvarchar" MaxLength="50" />
+          <Property Name="CustIDAr" Type="nvarchar" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="Address1" Type="nvarchar" MaxLength="255" />
+          <Property Name="Address2" Type="nvarchar" MaxLength="255" />
+          <Property Name="City" Type="nvarchar" MaxLength="255" />
+          <Property Name="State" Type="nvarchar" MaxLength="255" />
+          <Property Name="Zip" Type="nvarchar" MaxLength="255" />
+          <Property Name="Country" Type="nvarchar" MaxLength="255" />
+          <Property Name="TIN" Type="nvarchar" MaxLength="50" />
+          <Property Name="TINAr" Type="nvarchar" MaxLength="50" />
+          <Property Name="NameinArabic" Type="nvarchar" MaxLength="255" />
+          <Property Name="BilltoInArabic" Type="nvarchar" MaxLength="255" />
+          <Property Name="ShiptoinArabic" Type="nvarchar" MaxLength="255" />
+          <Property Name="TotalWords" Type="nvarchar" MaxLength="255" />
+          <Property Name="TotalWordsAr" Type="nvarchar" MaxLength="255" />
+          <Property Name="CurrencyCodeAr" Type="nvarchar" MaxLength="255" />
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="login">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Phone" Type="varchar" MaxLength="50" />
+          <Property Name="Active" Type="bit" />
+        </EntityType>
+        <EntityType Name="login-bk">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Phone" Type="varchar" MaxLength="50" />
+          <Property Name="Active" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="Inv_TestingModelStoreContainer">
+          <EntitySet Name="AR_DETAILS" EntityType="Self.AR_DETAILS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AR_DETAILS_befor_deleted" EntityType="Self.AR_DETAILS_befor_deleted" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AR_HEADER" EntityType="Self.AR_HEADER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AR_HEADER_befor_deleted" EntityType="Self.AR_HEADER_befor_deleted" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="login" EntityType="Self.login" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="login-bk" EntityType="Self.login-bk" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Inv_TestingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AR_DETAILS">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="InvoiceNum" Type="Int32" />
+          <Property Name="InvoiceLine" Type="Int32" />
+          <Property Name="Company" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PartNum" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="LineDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LineDescAr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TotalMiscChrg" Type="Double" />
+          <Property Name="PackNum" Type="Double" />
+          <Property Name="PackNumAr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PackLine" Type="Double" />
+          <Property Name="OrderNum" Type="Double" />
+          <Property Name="OrderLine" Type="Double" />
+          <Property Name="CustID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Address1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Address2" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="Address3" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="ShipViaCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UnitPrice" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="UnitPriceAr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SalesUM" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="SellingShipQty" Type="Double" />
+          <Property Name="SellingShipQtyAr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Total" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="TotalAr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TaxRate" Type="Double" />
+          <Property Name="ProdNameAr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="AR_DETAILS_befor_deleted">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="InvoiceNum" Type="Int32" />
+          <Property Name="InvoiceLine" Type="Int32" />
+          <Property Name="Company" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PartNum" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="LineDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LineDescAr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TotalMiscChrg" Type="Double" />
+          <Property Name="PackNum" Type="Double" />
+          <Property Name="PackNumAr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PackLine" Type="Double" />
+          <Property Name="OrderNum" Type="Double" />
+          <Property Name="OrderLine" Type="Double" />
+          <Property Name="CustID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Address1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Address2" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="Address3" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="ShipViaCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UnitPrice" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="UnitPriceAr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SalesUM" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="SellingShipQty" Type="Double" />
+          <Property Name="SellingShipQtyAr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Total" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="TotalAr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TaxRate" Type="Double" />
+          <Property Name="ProdNameAr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="AR_HEADER">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="InvoiceNum" Type="Int32" />
+          <Property Name="InvoiceNumAr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Company" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="OrderNum" Type="Int32" />
+          <Property Name="OrderNumAr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PONum" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PONumAr" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="FOB" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="TermsCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="InvoiceDate" Type="DateTime" Precision="3" />
+          <Property Name="InvoiceAmt" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="InvoiceAmtAr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CurrencyCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Character01" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Character02" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Number01" Type="Double" />
+          <Property Name="Number02" Type="Double" />
+          <Property Name="Date01" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Date02" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CheckBox01" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CheckBox02" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ShortChar01" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ShortChar02" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CustID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CustIDAr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Address1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Address2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Zip" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="TIN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TINAr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NameinArabic" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="BilltoInArabic" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ShiptoinArabic" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="TotalWords" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="TotalWordsAr" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CurrencyCodeAr" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="AR_HEADER_befor_deleted">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="InvoiceNum" Type="Int32" />
+          <Property Name="InvoiceNumAr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Company" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="OrderNum" Type="Int32" />
+          <Property Name="OrderNumAr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PONum" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PONumAr" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="FOB" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="TermsCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="InvoiceDate" Type="DateTime" Precision="3" />
+          <Property Name="InvoiceAmt" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="InvoiceAmtAr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CurrencyCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Character01" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Character02" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Number01" Type="Double" />
+          <Property Name="Number02" Type="Double" />
+          <Property Name="Date01" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Date02" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CheckBox01" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CheckBox02" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ShortChar01" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ShortChar02" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CustID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CustIDAr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Address1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Address2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Zip" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="TIN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TINAr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NameinArabic" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="BilltoInArabic" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ShiptoinArabic" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="TotalWords" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="TotalWordsAr" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CurrencyCodeAr" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="login">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Active" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="login_bk">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Active" Type="Boolean" />
+        </EntityType>
+        <EntityContainer Name="Inv_TestingEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AR_DETAILS" EntityType="Self.AR_DETAILS" />
+          <EntitySet Name="AR_DETAILS_befor_deleted" EntityType="Self.AR_DETAILS_befor_deleted" />
+          <EntitySet Name="AR_HEADER" EntityType="Self.AR_HEADER" />
+          <EntitySet Name="AR_HEADER_befor_deleted" EntityType="Self.AR_HEADER_befor_deleted" />
+          <EntitySet Name="logins" EntityType="Self.login" />
+          <EntitySet Name="login_bk" EntityType="Self.login_bk" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Inv_TestingModelStoreContainer" CdmEntityContainer="Inv_TestingEntities">
+          <EntitySetMapping Name="AR_DETAILS">
+            <EntityTypeMapping TypeName="Inv_TestingModel.AR_DETAILS">
+              <MappingFragment StoreEntitySet="AR_DETAILS">
+                <ScalarProperty Name="InvoiceNum" ColumnName="InvoiceNum" />
+                <ScalarProperty Name="InvoiceLine" ColumnName="InvoiceLine" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="PartNum" ColumnName="PartNum" />
+                <ScalarProperty Name="LineDesc" ColumnName="LineDesc" />
+                <ScalarProperty Name="LineDescAr" ColumnName="LineDescAr" />
+                <ScalarProperty Name="TotalMiscChrg" ColumnName="TotalMiscChrg" />
+                <ScalarProperty Name="PackNum" ColumnName="PackNum" />
+                <ScalarProperty Name="PackNumAr" ColumnName="PackNumAr" />
+                <ScalarProperty Name="PackLine" ColumnName="PackLine" />
+                <ScalarProperty Name="OrderNum" ColumnName="OrderNum" />
+                <ScalarProperty Name="OrderLine" ColumnName="OrderLine" />
+                <ScalarProperty Name="CustID" ColumnName="CustID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Address3" ColumnName="Address3" />
+                <ScalarProperty Name="ShipViaCode" ColumnName="ShipViaCode" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="UnitPriceAr" ColumnName="UnitPriceAr" />
+                <ScalarProperty Name="SalesUM" ColumnName="SalesUM" />
+                <ScalarProperty Name="SellingShipQty" ColumnName="SellingShipQty" />
+                <ScalarProperty Name="SellingShipQtyAr" ColumnName="SellingShipQtyAr" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="TotalAr" ColumnName="TotalAr" />
+                <ScalarProperty Name="TaxRate" ColumnName="TaxRate" />
+                <ScalarProperty Name="ProdNameAr" ColumnName="ProdNameAr" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AR_DETAILS_befor_deleted">
+            <EntityTypeMapping TypeName="Inv_TestingModel.AR_DETAILS_befor_deleted">
+              <MappingFragment StoreEntitySet="AR_DETAILS_befor_deleted">
+                <ScalarProperty Name="InvoiceNum" ColumnName="InvoiceNum" />
+                <ScalarProperty Name="InvoiceLine" ColumnName="InvoiceLine" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="PartNum" ColumnName="PartNum" />
+                <ScalarProperty Name="LineDesc" ColumnName="LineDesc" />
+                <ScalarProperty Name="LineDescAr" ColumnName="LineDescAr" />
+                <ScalarProperty Name="TotalMiscChrg" ColumnName="TotalMiscChrg" />
+                <ScalarProperty Name="PackNum" ColumnName="PackNum" />
+                <ScalarProperty Name="PackNumAr" ColumnName="PackNumAr" />
+                <ScalarProperty Name="PackLine" ColumnName="PackLine" />
+                <ScalarProperty Name="OrderNum" ColumnName="OrderNum" />
+                <ScalarProperty Name="OrderLine" ColumnName="OrderLine" />
+                <ScalarProperty Name="CustID" ColumnName="CustID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Address3" ColumnName="Address3" />
+                <ScalarProperty Name="ShipViaCode" ColumnName="ShipViaCode" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="UnitPriceAr" ColumnName="UnitPriceAr" />
+                <ScalarProperty Name="SalesUM" ColumnName="SalesUM" />
+                <ScalarProperty Name="SellingShipQty" ColumnName="SellingShipQty" />
+                <ScalarProperty Name="SellingShipQtyAr" ColumnName="SellingShipQtyAr" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="TotalAr" ColumnName="TotalAr" />
+                <ScalarProperty Name="TaxRate" ColumnName="TaxRate" />
+                <ScalarProperty Name="ProdNameAr" ColumnName="ProdNameAr" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AR_HEADER">
+            <EntityTypeMapping TypeName="Inv_TestingModel.AR_HEADER">
+              <MappingFragment StoreEntitySet="AR_HEADER">
+                <ScalarProperty Name="InvoiceNum" ColumnName="InvoiceNum" />
+                <ScalarProperty Name="InvoiceNumAr" ColumnName="InvoiceNumAr" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="OrderNum" ColumnName="OrderNum" />
+                <ScalarProperty Name="OrderNumAr" ColumnName="OrderNumAr" />
+                <ScalarProperty Name="PONum" ColumnName="PONum" />
+                <ScalarProperty Name="PONumAr" ColumnName="PONumAr" />
+                <ScalarProperty Name="FOB" ColumnName="FOB" />
+                <ScalarProperty Name="TermsCode" ColumnName="TermsCode" />
+                <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+                <ScalarProperty Name="InvoiceAmt" ColumnName="InvoiceAmt" />
+                <ScalarProperty Name="InvoiceAmtAr" ColumnName="InvoiceAmtAr" />
+                <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+                <ScalarProperty Name="Character01" ColumnName="Character01" />
+                <ScalarProperty Name="Character02" ColumnName="Character02" />
+                <ScalarProperty Name="Number01" ColumnName="Number01" />
+                <ScalarProperty Name="Number02" ColumnName="Number02" />
+                <ScalarProperty Name="Date01" ColumnName="Date01" />
+                <ScalarProperty Name="Date02" ColumnName="Date02" />
+                <ScalarProperty Name="CheckBox01" ColumnName="CheckBox01" />
+                <ScalarProperty Name="CheckBox02" ColumnName="CheckBox02" />
+                <ScalarProperty Name="ShortChar01" ColumnName="ShortChar01" />
+                <ScalarProperty Name="ShortChar02" ColumnName="ShortChar02" />
+                <ScalarProperty Name="CustID" ColumnName="CustID" />
+                <ScalarProperty Name="CustIDAr" ColumnName="CustIDAr" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="TIN" ColumnName="TIN" />
+                <ScalarProperty Name="TINAr" ColumnName="TINAr" />
+                <ScalarProperty Name="NameinArabic" ColumnName="NameinArabic" />
+                <ScalarProperty Name="BilltoInArabic" ColumnName="BilltoInArabic" />
+                <ScalarProperty Name="ShiptoinArabic" ColumnName="ShiptoinArabic" />
+                <ScalarProperty Name="TotalWords" ColumnName="TotalWords" />
+                <ScalarProperty Name="TotalWordsAr" ColumnName="TotalWordsAr" />
+                <ScalarProperty Name="CurrencyCodeAr" ColumnName="CurrencyCodeAr" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AR_HEADER_befor_deleted">
+            <EntityTypeMapping TypeName="Inv_TestingModel.AR_HEADER_befor_deleted">
+              <MappingFragment StoreEntitySet="AR_HEADER_befor_deleted">
+                <ScalarProperty Name="InvoiceNum" ColumnName="InvoiceNum" />
+                <ScalarProperty Name="InvoiceNumAr" ColumnName="InvoiceNumAr" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="OrderNum" ColumnName="OrderNum" />
+                <ScalarProperty Name="OrderNumAr" ColumnName="OrderNumAr" />
+                <ScalarProperty Name="PONum" ColumnName="PONum" />
+                <ScalarProperty Name="PONumAr" ColumnName="PONumAr" />
+                <ScalarProperty Name="FOB" ColumnName="FOB" />
+                <ScalarProperty Name="TermsCode" ColumnName="TermsCode" />
+                <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+                <ScalarProperty Name="InvoiceAmt" ColumnName="InvoiceAmt" />
+                <ScalarProperty Name="InvoiceAmtAr" ColumnName="InvoiceAmtAr" />
+                <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+                <ScalarProperty Name="Character01" ColumnName="Character01" />
+                <ScalarProperty Name="Character02" ColumnName="Character02" />
+                <ScalarProperty Name="Number01" ColumnName="Number01" />
+                <ScalarProperty Name="Number02" ColumnName="Number02" />
+                <ScalarProperty Name="Date01" ColumnName="Date01" />
+                <ScalarProperty Name="Date02" ColumnName="Date02" />
+                <ScalarProperty Name="CheckBox01" ColumnName="CheckBox01" />
+                <ScalarProperty Name="CheckBox02" ColumnName="CheckBox02" />
+                <ScalarProperty Name="ShortChar01" ColumnName="ShortChar01" />
+                <ScalarProperty Name="ShortChar02" ColumnName="ShortChar02" />
+                <ScalarProperty Name="CustID" ColumnName="CustID" />
+                <ScalarProperty Name="CustIDAr" ColumnName="CustIDAr" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="TIN" ColumnName="TIN" />
+                <ScalarProperty Name="TINAr" ColumnName="TINAr" />
+                <ScalarProperty Name="NameinArabic" ColumnName="NameinArabic" />
+                <ScalarProperty Name="BilltoInArabic" ColumnName="BilltoInArabic" />
+                <ScalarProperty Name="ShiptoinArabic" ColumnName="ShiptoinArabic" />
+                <ScalarProperty Name="TotalWords" ColumnName="TotalWords" />
+                <ScalarProperty Name="TotalWordsAr" ColumnName="TotalWordsAr" />
+                <ScalarProperty Name="CurrencyCodeAr" ColumnName="CurrencyCodeAr" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="logins">
+            <EntityTypeMapping TypeName="Inv_TestingModel.login">
+              <MappingFragment StoreEntitySet="login">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="login_bk">
+            <EntityTypeMapping TypeName="Inv_TestingModel.login_bk">
+              <MappingFragment StoreEntitySet="login-bk">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
